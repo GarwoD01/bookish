@@ -18,6 +18,26 @@ CREATE TABLE authors (
     PRIMARY KEY(id)
 )
 
+GO
+
+CREATE TABLE copies (
+    id int NOT NULL IDENTITY(1,1),
+    amount int NULL,
+    PRIMARY KEY(id)   
+)
+
+GO
+
+CREATE TABLE person (
+    id int NOT NULL IDENTITY(1,1),
+    card_no int NOT NULL,
+    f_name nvarchar(MAX) NULL,
+    s_name nvarchar(MAX) NULL,
+    PRIMARY KEY(id)
+)
+
+GO
+
 CREATE TABLE books_authors (
     author_id INT NOT NULL,
     book_id  INT NOT NULL,
@@ -25,16 +45,13 @@ CREATE TABLE books_authors (
     FOREIGN KEY (book_id) REFERENCES books(id)
 )
 
-CREATE TABLE copies (
-    amount int NULL
-)
+GO
 
-CREATE TABLE person (
-    card_no int NOT NULL IDENTITY(1,1),
-    f_name nvarchar(MAX) NULL,
-    s_name nvarchar(MAX) NULL
-    PRIMARY KEY(card_no)
+CREATE TABLE books_copies (
+    book_id INT NOT NULL,
+    copy_id  INT NOT NULL,
+    FOREIGN KEY (book_id) REFERENCES books(id),
+    FOREIGN KEY (copy_id) REFERENCES copies(id)
 )
 
 GO
-

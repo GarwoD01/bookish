@@ -18,10 +18,25 @@ VALUES
 
 GO
 
+INSERT INTO copies
+    (amount)
+VALUES
+    (420),
+    (69),
+    (21)
+
 INSERT INTO books_authors
     (book_id, author_id)
 VALUES
     (1, 1),
-    (2, 1),
-    (3, 1)
-    
+    (2, 2),
+    (3, 3)
+
+GO
+
+INSERT INTO books_copies
+    (book_id, copy_id)
+VALUES
+    (1, 1),
+    (2, 2),
+    (3, 3)
