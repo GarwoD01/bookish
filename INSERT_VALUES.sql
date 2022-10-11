@@ -17,3 +17,11 @@ VALUES
     ('Life 3.0', '9783548377964')
 
 GO
+
+INSERT INTO books_authors
+    (book_id, author_id)
+VALUES
+    (1, 1),
+    (2, 1),
+    (3, 1)
+    
