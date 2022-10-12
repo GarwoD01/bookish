@@ -6,11 +6,11 @@ DROP Table books
 
 GO
 
-DROP Table books_authors
+DROP Table copies
 
 GO
 
-DROP Table copies
+DROP Table books_authors
 
 GO
 
@@ -18,6 +18,3 @@ DROP Table person
 
 GO
 
-DROP Table books_copies
-
-GO

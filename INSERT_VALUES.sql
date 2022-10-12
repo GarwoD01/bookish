@@ -19,11 +19,20 @@ VALUES
 GO
 
 INSERT INTO copies
-    (amount)
+    (book_id, person_id)
 VALUES
-    (420),
-    (69),
-    (21)
+    (1, 1),
+    (2, 2),
+    (3, 3)
+
+GO
+
+INSERT INTO person
+    (library_card, f_name, s_name)
+VALUES
+    (123, 'Daniel', 'Garwood'),
+    (456, 'Josh', 'Caddy'),
+    (789, 'Dave', 'Artus')
 
 INSERT INTO books_authors
     (book_id, author_id)
@@ -33,10 +42,3 @@ VALUES
     (3, 3)
 
 GO
-
-INSERT INTO books_copies
-    (book_id, copy_id)
-VALUES
-    (1, 1),
-    (2, 2),
-    (3, 3)
