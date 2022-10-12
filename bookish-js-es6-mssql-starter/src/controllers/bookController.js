@@ -21,11 +21,20 @@ class BookController {
             "title": "Pride and Prejudice",
             "isbn": "9783548377989"
         };
+        this.newArray = [];
     }
 
     getAllBooks(request, response) {
         console.log( "request for all books" + request.url );
-        response.status(200).send(this.mockArray);
+        for (let i = 0; i < this.mockArray.length; i++){
+            if ( undefined in this.mockArray[i]){
+
+            }
+            else{
+                this.newArray.push(this.mockArray[i]);
+            }
+        }
+        response.status(200).send(this.newArray);
         // array filter
     }
 
@@ -55,6 +64,17 @@ class BookController {
         // .find
         // .reduce
         // . filter
+    }
+
+    printBooks(mockArray,response){
+        for (let i = 0; i < mockArray.length; i++){
+            if ( null in mockArray.title){
+
+            }
+            else{
+                response.status(200).send(mockArray[i]);
+            }
+        }
     }
 }
 
